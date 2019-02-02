@@ -1,0 +1,279 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="studyManagement.master.cs" Inherits="StudyManagement.StudyManagement.studyManagement" %>
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+        <title>Online Study Management System</title>
+        <link rel="shortcut icon" href="~/images/fav.png" type="jpg/png" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
+        <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/css/fontawesome-all.min.css" rel="stylesheet" />
+        <link href="~/css/slick.css" rel="stylesheet" />
+        <link href="~/css/magnific-popup.css" rel="stylesheet" />
+        <link href="~/css/animate.min.css" rel="stylesheet" />
+        <link href="~/css/style.css" rel="stylesheet" />
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+            
+        </asp:ContentPlaceHolder>
+        <style type="text/css">
+            .auto-style1 {
+                left: 0px;
+                top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="frm" runat="server" method="post" enctype="multipart/form-data">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <!--pre-loader-->
+            <div class="preloader"><span class="beacon"></span></div>
+            <!--end pre-loader-->
+            <div class="body_overlay"></div>
+            <!-- Search box -->
+            <div class="search_box_text">
+                <div class="search_this">
+                    <asp:TextBox ID="all_search" runat="server" placeholder="Search Keywords(s)"></asp:TextBox>
+                    <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="close_search"><i class="fas fa-times"></i></div>
+            </div>
+            <!-- //Search box -->
+            <!-- Start Header area -->
+                <header class="header_area">
+                    <div class="header_top bg_primary">
+                       <div class="container">
+                           <div class="row">
+                               <div class="col-xs-12 col-sm-12 col-md-8">
+                                   <div class="header_top_left text_white">
+                                       <i class="far fa-clock"></i> Opening Hours:  sat - thu : 6.00 am - 10.00 pm, Friday Closed
+                                   </div>
+                               </div>
+                               <div class="col-xs-12 col-sm-12 col-md-4">
+                                   <div class="header_top_right pull-right">
+                                       <div id="after_login_status" runat="server">
+                                           <asp:Label ID="login_status" CssClass="login_status_msg" runat="server"></asp:Label>
+                                           <asp:Label ID="login_status1" CssClass="login_status_msg" runat="server"></asp:Label>
+                                           <div class="dropdown profile_settings">
+                                               <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                                   <i class="fas fa-cog"></i>
+                                                   <span class="caret"></span>
+                                               </button>
+                                               <ul class="dropdown-menu">
+                                                   <li>
+                                                       <asp:LinkButton ID="usersOwnProfile" PostBackUrl="StudentProfile.aspx" runat="server">My Profile</asp:LinkButton>
+                                                   </li>
+                                                   <li class="divider"></li>
+                                                   <li class="btn_logout">
+                                                       <asp:Button ID="btnLogOut" CssClass="btn text_white" runat="server" Text="Logout" OnClick="btnLogOut_Click" />
+                                                       <i class="fas fa-sign-out-alt"></i>                                                 
+                                                   </li>
+                                               </ul>
+                                           </div>
+                                           
+                                       </div>
+                                       <div id="login_register_link" runat="server">
+                                           <a class="text_white" href="UserLogin.aspx"><i class="far fa-user"></i> Login</a>
+                                           <a class="text_white" href="UserRegistration.aspx"><i class="far fa-edit"></i> Register</a>
+                                       </div>
+
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="header_middle">
+                       <div class="container">
+                           <div class="row">
+                               <div class="col-xs-12 col-sm-6 col-md-4">
+                                   <div class="hm_left">
+                                       <i class="fas fa-envelope"></i>
+                                       <div class="hm_content">
+                                           <a class="text-uppercase" href="#">Mail us Today</a>
+                                           <h5>info@mail.com</h5>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-xs-12 col-sm-6 col-md-4">
+                                   <a href="#" class="navbar-brand">Study <span class="text_primary">Management</span></a>
+                               </div>
+                               <div class="auto-style1">
+                                   <div class="hm_right pull-right">
+                                       <i class="fas fa-phone-square"></i>
+                                       <div class="hm_content">
+                                           <a class="text-uppercase" href="#">Call us for more details</a>
+                                           <h5>+88 01700000000</h5>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                   
+                    <div class="header_navigation">
+                        <div class="header_nav_wrapper navbar navbar-default" style="left: 0px; top: 0px">
+                            <div class="container">
+                                <div class="navigation bg_secondary">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-nav-menu">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div> <!-- /navbar header -->
+                                    <!-- main menu -->
+                                    <div class="collapse navbar-collapse no_gutter" id="responsive-nav-menu">
+                                        <ul class="nav navbar-nav main_menu">
+                                            <li class="active"><a href="Home.aspx">Home</a></li>
+                                            <li><a href="AboutUs.aspx">About us</a></li>
+                                            <li><a href="all_students.aspx">Students</a></li>
+                                            <li><a href="all_courses.aspx">Courses</a></li>
+                                            <li><a href="all_teachers.aspx">Teachers</a></li>
+                                            <li><a href="ExamSchedule.aspx">Exam Schedule</a></li>
+                                            <li><a href="NoticeBoard.aspx">Notice Board</a></li>
+                                            <li><a href="ContactUs.aspx">Contact us</a></li>
+                                        </ul>
+                                        <!--Navigation Search box-->
+                                        <div class="navbar_search_btn pull-right">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <!--/Search box-->
+                                    </div> <!--  /main menu  -->
+                                </div>
+                            </div>
+                       
+                        </div>
+                    </div>
+                   
+                </header> <!-- //header area -->
+          
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+                </asp:ContentPlaceHolder>
+            </div>
+
+                <!-- Start Footer area -->
+                <footer>
+                    <div class="footer_content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="footer_about">
+                                        <h2>Study <span class="text_primary">Management</span></h2>
+                                        <p>
+                                            12, Kawran Bazar C/A,
+                                            Dhaka-1215,
+                                            Bangladesh
+                                        </p>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <i class="fas fa-phone text_primary"></i>
+                                                <a href="#">123-456-789</a>
+                                            </li>
+                                            <li>
+                                                <i class="far fa-envelope text_primary"></i>
+                                                <a href="#">contact@domain.com</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-globe text_primary"></i>
+                                                <a href="#">www.studymanagement.com</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="footer_useful_links">
+                                        <h4>Useful Links</h4> 
+                                        <ul class="list-unstyled">
+                                            <li><a href="Home.aspx">Home Page</a></li>
+                                            <li><a href="#">About Us</a></li>
+                                            <li><a href="#">Our Mission</a></li>
+                                            <li><a href="#">Terms & Conditions</a></li>
+                                            <li><a href="#">FAQ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="footer_top_news">
+                                        <h4>Top News</h4> 
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img class="media-object" src="../images/80x55.png"/>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><a href="#">PHP Learning</a></h5>
+                                                <p>jan 08, 2018</p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img class="media-object" src="../images/80x55.png"/>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><a href="#">Web Development</a></h5>
+                                                <p>jan 08, 2018</p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img class="media-object" src="../images/80x55.png"/>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><a href="#">Spoken English</a></h5>
+                                                <p>jan 08, 2018</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Copyright-->
+                    <div class="footer_copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                     <p>Copyright &copy;2018 Study Management. All Rights Reserved  </p>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="social_icon pull-right">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    </div>
+                                    <%--<ul class="list-unstyled pull-right">
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Help Desk</a></li>
+                                        <li><a href="#">Support</a></li>
+                                    </ul>--%>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- //copyright -->
+                </footer>
+                <!-- //Footer area -->
+                <a class="scrollToTop" href="#"><i class="fas fa-angle-up"></i></a>
+
+        <!-- JavaScript Libraries
+        =================================================== -->
+            <%--<script src="scripts/jquery-1.11.0.min.js"></script>--%>
+            <script src="../scripts/jquery-2.2.4.min.js"></script>
+            <script src="../scripts/bootstrap.min.js"></script>
+            <script src="../scripts/jquery.sticky.js"></script>
+            <script src="../scripts/waypoints.min.js"></script>
+            <script src="../scripts/jquery.counterup.min.js"></script>
+            <script src="../scripts/jquery.parallax-1.1.3.js"></script>        
+            <script src="../scripts/slick.min.js"></script>
+            <script src="../scripts/jquery.magnific-popup.min.js"></script>
+            <script src="../scripts/masonry.pkgd.min.js"></script>
+            <script src="../scripts/wow.min.js"></script>
+            <script src="../scripts/main.js"></script>
+       </form>
+    </body>
+</html>

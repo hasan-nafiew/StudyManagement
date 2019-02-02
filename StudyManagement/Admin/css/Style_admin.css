@@ -1,0 +1,150 @@
+﻿
+body {
+	background-color: #343a40;    
+}
+.padding_all {
+	padding: 50px 70px;
+}
+.padding_top_bottom {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+/*------  notification massage  ------*/
+.dropdown-messages {
+    max-height: 200px;
+    overflow: auto;
+}
+.dropdown-messages table {
+    width: 100%;
+}
+.dropdown-messages a {
+    display: block;
+    text-decoration: none;
+}
+.dropdown-messages em {
+    font-size: 12px;
+}
+/*------  //notification massage  ------*/
+.form-control {
+	min-height: 40px;
+	border-radius: 0;
+	box-shadow: none;
+}
+.btn-success {
+	background-color: #07bf51;
+	border-radius: 0;
+}
+.panel-green>.panel-heading {
+	background-color: #07bf51;
+	border-color: #07bf51;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+#wrapper .navbar {
+	height: 51px;
+	background-color: #343A40;
+	color: #868e96;
+}
+#wrapper .navbar-default {
+	border: none;
+}
+#wrapper .navbar-brand {
+	color: #CCC;
+	font-size: 22px;
+}
+.navbar-top-links li a {
+	color: #868e96;
+}
+.navbar-top-links li:hover>a,
+.navbar-top-links li:focus>a{
+	color: #07BF51;
+	background-color: transparent;
+}
+.custom-search-form {
+	border: 1px solid #07BF51;
+}
+.custom-search-form .form-control {
+	border-radius: 0;
+	min-height: 30px;
+}
+.custom-search-form .btn,
+.custom-search-form .btn:focus {
+	background-color: #07bf51;
+	border-radius: 0;
+	border-color: #07bf51;
+	box-shadow: none;
+}
+.custom-search-form .btn i {
+	 color: #cccccc;
+}
+.sidebar ul li a {
+	color: #868e96;
+	font-size: 15px;
+}
+.sidebar ul li a:hover, 
+.sidebar ul li a:focus,
+.sidebar ul li a.active{
+	background-color: #343A40;
+	color: #AAA;
+}
+.sidebar ul li{
+	border: none;
+	background-color: #343A40;
+	color: #868e96;
+}
+.sidebar i {
+	margin-right: 5px;
+	width: 10px;
+	color: #868e96;
+}
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+	background-color: #343A40;
+}
+.panel .btn {
+	padding: 6px 40px;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+input[type="file"] {
+	height: auto;
+}
+
+.form-group label {
+	font-weight: 400;
+}
+.form-group input[type="radio"] {
+	margin-right: 3px;
+}
+.form-group table tr>td {
+	margin-right: 12px;
+	display: inline-block;
+}
+/*----------- Admin login page --------------*/
+.unsuccess_msg {
+	display: block;
+	margin-top: 10px;
+}
+.admin_login_page .panel-heading {
+	padding: 16px 16px;
+	background-color: #07bf51;
+}
+.admin_login_page .panel-body {
+	padding: 8px 36px 36px;
+}
+.admin_login_page .form-control {
+	border-radius: 0;
+	box-shadow: none;
+}
+.admin_login_page .btn {
+	border-radius: 0;
+	box-shadow: none;
+}
+.admin_login_page .btn-success {
+	background-color: #07bf51;
+}
+/*--------  //Admin login page -----------*/
+.view_course_area input[type="text"] {
+	margin: 2px;
+}

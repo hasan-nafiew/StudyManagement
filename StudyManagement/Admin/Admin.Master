@@ -1,0 +1,290 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="StudyManagement.Admin.Admin" %>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DbConnection %>" SelectCommand="SELECT [Name], [CrntTime], [Massage] FROM [StudyUserRequest]"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DbConnection %>" SelectCommand="SELECT [Name],[Message] FROM [ContactUsMsg]"></asp:SqlDataSource>
+<!DOCTYPE html>
+
+<html lang="en">
+    <head runat="server">
+        <link rel="shortcut icon" href="~/images/fav.png" type="jpg/png" />
+        <title>Study Management Admin Panel</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/metisMenu.min.css" rel="stylesheet" />
+        <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+        <link href="../css/fontawesome-all.min.css" rel="stylesheet" />
+        <link href="css/Style_admin.css" rel="stylesheet" />
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form id="adminForm" runat="server">
+            <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Study Management</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <asp:DataList runat="server" DataSourceID="SqlDataSource2">
+                            <ItemTemplate>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <strong>
+                                                <asp:Label ID="NameLabel1" runat="server" Text='<%# Eval("Name") %>' />
+                                            </strong>
+                                        </div>
+                                        <div><asp:Label ID="MassageLabel1" runat="server" Text='<%# Eval("Message") %>' /></div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <asp:DataList runat="server" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <strong>
+                                                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                                            </strong>
+                                            <span class="pull-right text-muted">
+                                                <em > <asp:Label ID="CrntTimeLabel" runat="server" Text='<%# Eval("CrntTime") %>' /></em>
+                                            </span>
+                                        </div>
+                                        <div><asp:Label ID="MassageLabel" runat="server" Text='<%# Eval("Massage") %>' /></div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                       
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+            
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <asp:LinkButton ID="displayUserName" runat="server"></asp:LinkButton>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <asp:LinkButton ID="btnAdminLogout" runat="server" OnClick="btnAdminLogout_Click">Logout</asp:LinkButton>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.aspx"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fas fa-file-alt"></i> Course<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddCourse.aspx"><i class="far fa-edit"></i> Add Course</a>
+                                </li>
+                                <li>
+                                    <a href="ViewCourseList.aspx"><i class="fas fa-eye"></i> All Course</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-file-alt"></i> Books<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddBook.aspx"><i class="far fa-edit"></i> Add Book</a>
+                                </li>
+                                <li>
+                                    <a href="ViewBookList.aspx"><i class="fas fa-eye"></i> All Books</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="#"><i class="fas fa-file-alt"></i> Students<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddStudent.aspx"><i class="far fa-edit"></i> Add Student</a>
+                                </li>
+                                <li>
+                                    <a href="ViewStudentList.aspx"><i class="fas fa-eye"></i> All Students</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-file-alt"></i> Teachers<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddTeacher.aspx"><i class="far fa-edit"></i> Add Teacher</a>
+                                </li>
+                                <li>
+                                    <a href="ViewTeacherList.aspx"><i class="fas fa-eye"></i> All Teachers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-file-alt"></i> Staff<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddStaff.aspx"><i class="far fa-edit"></i> Add Staff</a>
+                                </li>
+                                <li>
+                                    <a href="ViewStaffList.aspx"><i class="fas fa-eye"></i> All Staff</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-file-alt"></i> Exam Schedule<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddExamSchedule.aspx"><i class="far fa-edit"></i> Add Exam Schedule</a>
+                                </li>
+                                <li>
+                                    <a href="ViewExamSchedule.aspx"><i class="fas fa-eye"></i> All Exam Schedule</a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="AddNotice.aspx"><i class="far fa-edit"></i> Add Notice</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-sistrix"></i> Issue And Search Book <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="IssueBook.aspx"><i class="fas fa-check-square"></i> Issue Book</a>
+                                </li>
+                                <li>
+                                    <a href="ViewBookList.aspx"><i class="fas fa-search"></i> Search Book</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <%--<li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>--%>
+               
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+            </nav>
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <%--Heading Title--%>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div>
+                    <%--Main Content--%>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+            
+            </div>
+                <!-- /#wrapper -->
+    
+        
+        
+            <!-- JavaScript Libraries
+            =================================================== -->
+            <script src="js/jquery.min.js"></script>
+            <script src="../scripts/bootstrap.min.js"></script>
+            <script src="js/metisMenu.min.js"></script>
+            <script src="js/sb-admin-2.min.js"></script>
+        </form>
+    </body>
+</html>

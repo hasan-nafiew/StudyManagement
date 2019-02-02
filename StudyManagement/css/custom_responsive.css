@@ -1,0 +1,476 @@
+
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+/*============= home page ==============*/
+	.search_box_text .search_this{
+		margin-left: -45%;
+		width: 90%;
+	}
+	.main-slider-description{
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.main-slider-description h1{
+		font-size: 85px;
+	}
+	.slider-item{
+		min-height: 598px;
+	}
+	.slider-item img{
+		min-height: 560px;
+		max-height: 570px;
+		right: 2%;
+	}
+	.second-slider-item {
+	    min-height: 580px;
+	    min-width: 465px;
+	}
+	.products{
+		padding-top: 70px;
+		padding-bottom: 100px;
+	}
+	.single-product{
+		max-height: 340px;
+	}
+	.lookbook{
+		padding-top: 60px;
+		padding-bottom: 130px;
+	}
+	.section-heading{
+		width: 80%;
+		margin-bottom: 45px;
+	}
+	.section-heading h1{
+		font-size: 40px;
+	}
+/*============= Shop choose Category ==============*/
+	.sp-banner-area{
+		background-position: 128% 0%;
+	 }
+	.cp-process-bar-activity a{
+		padding: 10px 20px;
+		font-size: 14px;
+	}
+/*=============== Shop choose product ===============*/
+	.shipping-offer{
+		left: 73%;
+		bottom: 55%;	
+	}
+	.cp-single-item-inner{
+		max-height: 245px;
+	}
+/*=============== Shop choose pattern ===============*/
+	.cp-pattern-area .products{
+		padding-bottom: 30px;
+	}
+/*==============  Shop Checkout  ==================*/
+	.order-subtotal-continue-checkout .btn{
+		padding-left: 25px;
+		padding-right: 25px;
+		font-size: 13px;
+	}
+/*==============  Shop payment  ==================*/
+	.shop-payment{
+		padding-top: 80px;
+		padding-bottom: 100px;
+		width: 60%;
+	}
+/*==============  questions  ==================*/
+	.questions{
+		width: 90%;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+/*============= home page ==============*/
+	.navigation-area .main-menu > li > a{
+		margin-right: 0px;
+	}
+	.search_box_text #close_search{
+		right: 3%;
+	}
+	.main-slider-description{
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.main-slider-description h1{
+		font-size: 60px;
+	}
+	.slider-item{
+		min-height: 566px;
+	}
+	.slider-item img{
+		max-height: 520px;
+		min-height: 500px;
+		right: -4%;
+	}
+	.products{
+		padding-top: 40px;
+		padding-bottom: 70px;
+	}
+	.single-product{
+		max-height: 340px;
+	}
+	.second-slider-item{
+		min-height: 543px;
+		min-width: 390px;
+	}
+	.lookbook{
+		padding-top: 40px;
+		padding-bottom: 130px;
+	}
+	.section-heading{
+		width: 80%;
+		margin-bottom: 40px;
+	}
+	.section-heading h1{
+		font-size: 40px;
+	}
+/*============= Shop choose Category ==============*/
+	.sp-banner-area{
+		background-position: 135% 0%;
+	 }
+	 .cp-process-bar-activity{
+	 	margin-top: 80px;
+	 }
+	.process-activity-back-btn{
+		margin-right: 10px;
+	}
+	.cp-process-bar-activity a{
+		padding: 10px 15px;
+		font-size: 13px;
+	}
+	.cp-process-bar-activity i{
+		margin: 0 8px;
+	}
+/*=============== Shop choose product ===============*/
+	.shipping-offer{
+		width: 90px;
+		height: 90px;
+		font-size: 14px;
+		left: 80%;
+		bottom: 55%;	
+	}
+	.cp-single-item-inner{
+		max-height: 245px;
+	}
+/*=============== Shop choose pattern ===============*/
+	.cp-pattern-area .products{
+		padding-bottom: 0px;
+	}
+	.cp-pattern-area .btn{
+		margin-top: 90px;
+	}
+	.cp-pattern-area{
+		padding-bottom: 90px;
+	}
+/*=============== Shop Product details ===============*/
+	.product-details-description h1{
+		margin-top: 20px;
+	}
+	.product-details-description .btn{
+		margin-bottom: 40px;
+	}
+/*=============== Shop My order ===============*/
+	.order-product-items{
+		padding: 15px 0px;
+	}
+	.order-product-item-img{
+		width: 140px;
+		height; auto;
+	}
+	.order-product-items p{
+		font-size: 14px;
+	}
+	p.order-product-item-price{
+		font-size: 13px;
+	}
+	.order-product-items .col-sm-1{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.order-product-item-delete .fa{
+		padding: 10px 12px;
+		width: 36px;
+		height: 35px;
+	}
+	.order-product-subtotal{
+		margin-top: 20px;
+		margin-bottom: 0px;
+	}
+	.order-product-subtotal h3{
+		font-size: 16px;
+	}
+/*==============  Shop payment  ==================*/
+	.shop-payment{
+		padding-top: 80px;
+		padding-bottom: 100px;
+		width: 70%;
+	}
+/*==============  questions  ==================*/
+	.questions{
+		width: 100%;
+	}
+/*==============  photo guide  ==================*/	
+	.photo_guide_list{
+		max-width: 50%;
+	}
+	.photo_guide_list li{
+		font-size: 18px;
+	}
+	.photo_guide figure{
+		width: 45%;
+	}
+}
+@media only screen and (max-width: 767px) {
+/*============= home page ==============*/
+	.navigation-area .navbar-brand{
+		padding:0;
+		margin-top: 5px;
+		max-width: 60px;
+	}
+	.main-menu{
+		padding: 10px 0px;
+	}
+	.navbar-cart {
+		float: none;
+		margin: 10px 0px 15px;
+		display: flex;
+		justify-content: center;
+	}
+	.search_box_text{
+		margin-top: -75px;
+		height: 70px;
+		top: 100%;
+	}
+	.search_box_text .search_this{
+		border-top: 1px solid #FFF4F9;
+	}
+	.search_box_text #all_search{
+		padding-top: 21px; 
+		padding-right: 20%;
+		padding-bottom: 20px;
+	}
+	.main-slider-description{
+		padding: 40px 10px 65px 10px;
+		text-align: center;
+	}
+	.main-slider-description h1{
+		font-size: 45px;
+	}
+	.products{
+		padding-top: 30px;
+		padding-bottom: 60px;
+	}
+	.single-product{
+		max-height: 100%;
+	}
+	.lookbook{
+		padding-bottom: 90px;
+	}
+	.section-heading{
+		margin-bottom: 30px;
+		width:100%;
+	}
+	.section-heading h1{
+		font-size: 35px;
+	}
+	.lookbook .plyr__controls{
+		color: transparent;
+		background: transparent;
+		bottom: -60px;
+	}
+	.copyright-title{
+		text-align: center;
+	}
+	.footer-payment-link{	
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+/*============= Shop choose Category ==============*/
+	.sp-banner-inner{
+	}
+	.cp-process-bar-activity{
+		margin-top: 30px;
+		display: block;
+		text-align: center;
+	}
+	.cp-process-bar-activity li{
+		float: none;
+		margin-top: 5px;
+	}
+	.process-activity-back-btn{
+		margin-right: 0px;
+	}
+	.cp-process-bar-activity a{
+		padding: 10px 15px;
+		font-size: 13px;
+		display: block;
+	}
+	.cp-process-bar-activity i{
+		display: none;
+	}
+	.cp-category-area .products{
+		padding-top: 20px;
+	}
+/*=============== Shop choose product ===============*/
+	.shipping-offer{
+		width: 90px;
+		height: 90px;
+		font-size: 14px;
+		left: 63%;
+		bottom: 100%;	
+	}
+	.cp-area .section-heading{
+		margin-top: 90px;
+	}
+/*=============== Shop choose pattern ===============*/
+	.cp-pattern-area .products{
+		padding-bottom: 0px;
+	}
+	.cp-pattern-area .btn{
+		margin-top: 90px;
+	}
+	.cp-pattern-area{
+		padding-bottom: 90px;
+	}
+	.cp-pattern-area #mCSB_1_dragger_horizontal.mCSB_dragger{
+		width: 155px !important;
+	}
+	.cp-pattern-area .mCS-inset.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		width: 150px;
+	}
+/*=============== Shop Product details ===============*/
+	.product-details{
+		padding-top: 50px;
+		padding-bottom: 40px;
+	}
+	.product-details-img{
+		max-height: 100%;
+	}
+	.product-details-description .btn{
+		margin-bottom: 40px;
+	}
+	.product-size-details{
+		padding-left: 0px;
+	}
+	.product-details-articles{
+		margin-top: 40px;
+	}
+/*=============== Shop Upload photo ===============*/
+	.upload-photo .btn{
+		margin-top: 20px;
+	}
+/*=============== Shop My order ===============*/
+	.my-order{
+		padding-top: 20px;
+		padding-bottom: 70px;
+	}
+	.order-product-heading{
+		display: none;
+	}
+	.order-product-items{
+		display: block;
+		padding: 30px 0px;
+	}
+	.order-product-item-img{
+		width: 100%;
+		height; auto;
+	}
+	.order-product-item-delete{
+		display: inline-block;
+		margin-top: 10px;
+	}
+	.order-product-subtotal{
+		margin-left: 0px;
+		margin-bottom: 30px;
+	}
+	.order-subtotal-continue-checkout{
+		padding-top: 20px;
+		float: none!important;
+		display: block;
+	}
+	.order-subtotal-continue-checkout .btn{
+		margin-top: 15px;
+		margin-left: 0;
+		width: 100%;
+	}
+/*==============  Shop Checkout  ==================*/
+	.shop-checkout{
+		padding-top: 40px;
+		padding-bottom: 60px;
+	}
+	.shop-checkout .pl-0,
+	.shop-checkout .pr-0{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.shop-checkout .form-control{
+		margin-top: 0;
+	}
+	.shop-checkout .input-group .btn{
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 0;
+	}
+/*==============  Shop payment  ==================*/
+	.shop-payment{
+		width: 100%;
+	}
+	.shop-checkout .radio label{
+		padding-right: 15px;
+	}
+/*==============  Shop payment  ==================*/
+	.shop-confirmation{
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+/*==============  contact  ==================*/
+	.contact{
+		width: 100%;
+	}
+	.contact .section-heading{
+		width: 100%;
+	}
+/*==============  questions  ==================*/
+	.questions{
+		width: 100%;
+	}
+	.questions > ul > li a,
+	.questions > ul > li > a > span{
+		font-size: 10px;
+	}
+	.questions > ul > li > a > span{
+		padding: 8px 10px;
+		margin-right: 10px;
+		width: 35px;
+		height: 35px;
+	}
+	.questions li .q_inner{
+		padding-left: 0px;
+	}
+	.questions .q_inner h3{
+		font-size: 16px;
+	}
+	.questions .q_inner p{
+		font-size: 12px;
+	}
+/*==============  photo guide  ==================*/
+	.photo_guide h2{
+		margin-top: 50px;
+		margin-bottom: 40px;
+		font-size: 30px;
+	}
+	.photo_guide_list{
+		max-width: 100%;
+		float: none;
+	}
+	.photo_guide_list li{
+		margin-bottom: 20px;
+		font-size: 16px;
+	}
+	.photo_guide figure{
+		float: none;
+		width: 100%;
+	}
+}
+
